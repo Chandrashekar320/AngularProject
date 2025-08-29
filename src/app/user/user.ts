@@ -1,6 +1,4 @@
-import { Component, Input , input, computed} from '@angular/core';
-
-
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -11,19 +9,19 @@ import { Component, Input , input, computed} from '@angular/core';
 export class User {
   
 
-// @Input({required:true}) avatar!: string;
-// @Input({required:true}) name!: string;
-avatar = input.required<string>();
-name = input.required<string>();
+@Input({required:true}) avatar!: string;
+@Input({required:true}) name!: string;
+// avatar = input.required<string>();
+// name = input.required<string>();
 
-//computed signal for imagePath
-imagePath = computed(() => {
-return '/users/' + this.avatar();
-});
+// //computed signal for imagePath
+// imagePath = computed(() => {
+// return '/users/' + this.avatar();
+// });
 
-// get imagePath(){
-// return '/users/' + this.avatar;
-// }
+get imagePath(){
+  return '/users/' + this.avatar;
+}
 
 
 onSelectUser() {}
