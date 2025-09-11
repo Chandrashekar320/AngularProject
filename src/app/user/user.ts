@@ -1,5 +1,20 @@
 import { Component, EventEmitter, Input, Output , output} from '@angular/core';
 
+// We can use type to define object structure and also define other types like union, intersection, primitive etc.
+// type User1 = {
+//   id:string;
+//   avatar: string;
+//   name: string;
+// };
+
+
+//  we can use interface instead of type,
+// but only objects can be defined using interface unlike type
+interface UserI {
+  id:string;
+  avatar: string;
+  name: string;
+}
 @Component({
   selector: 'app-user',
   imports: [],
@@ -8,11 +23,15 @@ import { Component, EventEmitter, Input, Output , output} from '@angular/core';
 })
 export class User {
   
-@Input({required:true}) user!:{
- id:string;
- avatar: string;
- name: string;
-};
+//using type/Interface User instead of simple object user
+@Input({required:true}) user!:UserI;
+
+
+// @Input({required:true}) user!:{
+//  id:string;
+//  avatar: string;
+//  name: string;
+// };
 @Output() select = new EventEmitter<string>();
 //select = output<string>();
 
