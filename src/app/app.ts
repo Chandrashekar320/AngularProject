@@ -15,7 +15,7 @@ import { Tasks } from './tasks/tasks';
 export class App {
   protected readonly title = signal('my-first-app');
   users = DUMMY_USERS;
-  selectedUserId = 'u1';
+  selectedUserId ?:string;
 
 get selectedUser() {
     return this.users.find((users) => users.id === this.selectedUserId)!;
