@@ -10,13 +10,13 @@
 
     @if(selectedUser)
     {
-    <app-tasks [name]="selectedUser.name" />
+    <app-tasks [userId]="selectedUser.id" [name]="selectedUser.name" />
     }
     @else{
     <p id="fallback">Please select a user to view tasks!</p>
     }
 </main>
 
-<!-- //to use ngFor and ngIf like in older versions of Angular, import CommonModule in app.module.ts
+<!-- //to use ngFor and ngIf like in older versions of, import CommonModule in app.module.ts
 //and to use else, add a template reference variable to the <p> tag and use it in the else block
 //<p id="fallback" #fallbackRef>Please select a user to view tasks!</p> -->
