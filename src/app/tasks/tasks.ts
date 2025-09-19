@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, output } from '@angular/core';
 import { Task } from "./task/task";
 
 @Component({
@@ -45,7 +45,13 @@ export class Tasks {
     },
   ];
 
-get selectedUserTasks() {
-    return this.tasks.filter((task)=> task.userId === this.userId);
+  get selectedUserTasks() {
+    return this.tasks.filter((task) => task.userId === this.userId);
   }
+
+  onCompleteTask(id: string) {
+    this.tasks = this.tasks.filter((task) => task.id !== id);
+  }
+
+
 }
