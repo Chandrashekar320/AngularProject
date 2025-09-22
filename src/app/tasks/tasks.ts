@@ -1,6 +1,6 @@
 import { Component, Input, Output, output } from '@angular/core';
 import { Task } from "./task/task";
-import { NewTask } from "../new-task/new-task";
+import { NewTask } from "./new-task/new-task";
 
 @Component({
   selector: 'app-tasks',
@@ -57,5 +57,10 @@ export class Tasks {
   onStartAddTask() {
     this.isAddingTask = true;
   }
+
+  onCancelAddTask() {
+    this.isAddingTask = false;
+  }
+
 
 }
