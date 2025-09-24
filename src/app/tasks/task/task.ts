@@ -1,4 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { TasksService } from './../tasks.service';
+import { Component, Input, inject } from '@angular/core';
 import { task } from './task.model';
 import { Card } from "../../shared/card/card";
 import { DatePipe } from '@angular/common';
@@ -11,9 +12,11 @@ import { DatePipe } from '@angular/common';
 })
 export class Task {
   @Input({ required: true }) task!: task;
-  @Output() complete = new EventEmitter<string>();
+
+  private TasksService = inject(TasksService);
+
 
   onCompleteTask() {
-    this.complete.emit(this.task.id);
+    this.TasksService.removeTask(this.task.id);
   }
 }

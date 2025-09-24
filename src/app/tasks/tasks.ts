@@ -25,7 +25,7 @@ export class Tasks {
   }
 
   onCompleteTask(id: string) { 
-    console.log("Complete task with id: " + id);
+
 }
 
   onStartAddTask() {
