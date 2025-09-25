@@ -1,6 +1,5 @@
-import { Component, EventEmitter, Input, Output , output} from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { UserI} from './user.model';
-import { Card } from "../shared/card/card";
 // import { type UserI} from './user.model';//to tell that we are importing type only
 
 
@@ -8,9 +7,9 @@ import { Card } from "../shared/card/card";
 // but only objects can be defined using interface unlike type
 @Component({
   selector: 'app-user',
-  imports: [Card],
   templateUrl: './user.html',
   styleUrl: './user.css',
+  standalone: false,
 })
 export class User {
   

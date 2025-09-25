@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
-import { App } from './app';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
-import { Header } from './header/header';
+import { App } from './app';
+import { Task } from './tasks/task/task';
 import { User } from './user/user';
 import { Tasks } from './tasks/tasks';
+import { Header } from './header/header';
+import { Card } from './shared/card/card';
+import { NewTask } from './tasks/new-task/new-task';
 
 @NgModule({
-    declarations: [App],// for non standalone components i.e standalone: false
+// for non standalone components i.e standalone: false. add in declarations
+    declarations: [App, Header, User, Card, Tasks, Task , NewTask],
     bootstrap: [App],
-imports: [BrowserModule, Header, User, Tasks],//i.e for standalone components = true
+//i.e for standalone components = true. add in imports:[]
+    imports: [BrowserModule, FormsModule],
 })
 export class AppModule { }

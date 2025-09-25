@@ -6,7 +6,7 @@ import { DUMMY_USERS } from './dummy-users';
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  standalone: false
+  standalone: false,
 })
 
 export class App {
