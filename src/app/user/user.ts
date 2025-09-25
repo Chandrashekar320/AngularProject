@@ -10,7 +10,7 @@ import { Card } from "../shared/card/card";
   selector: 'app-user',
   imports: [Card],
   templateUrl: './user.html',
-  styleUrl: './user.css'
+  styleUrl: './user.css',
 })
 export class User {
   
